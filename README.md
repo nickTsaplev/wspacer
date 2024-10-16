@@ -1,3 +1,4 @@
+# Wspacer
 Made by Nikolai Tsaplev M3100 \
 This extension provides some functions for simple code formatting and checking the codestyle and adds these functions to the menu bar
 * wsp-tabs-to-spaces  - replaces all tabs in the buffer with amount of spaces provided
