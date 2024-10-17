@@ -1,5 +1,9 @@
 ;;; wspacer.el --- Simple code styling tools
 
+;; Author: Nicholas Tsaplev
+;; Keywords: cpp
+;; Version: 0.0.1
+
 ;;; Commentary:
 ;; A few functions to help format cpp code
 
@@ -60,7 +64,7 @@ SPACES-IN-TAB spaces into one tab character."
   "Replace all occurences of REPLACING with REPLACEMENT in the current buffer."
   
   (goto-char (point-min))
-  (while (search-forward replacing nil nil)
+  (while (search-forward replacing nil t)
     (replace-match replacement))
   )
 
@@ -116,9 +120,9 @@ Show the output in a new window to right of the current one."
 (define-key wspacer-menu-bar-menu [delete-empty-lines]
             '(menu-item "Empty the empty lines" wsp-delete-empty-lines :help "Makes all lines with only whitespaces/tabs empty"))
 (define-key wspacer-menu-bar-menu [fix-operators-cpp]
-'(menu-item "Fix missing ( as in if(" wsp-fix-operators-cpp :help "Replaces op( with op ( for some cpp operators"))
+            '(menu-item "Fix missing ( as in if(" wsp-fix-operators-cpp :help "Replaces op( with op ( for some cpp operators"))
 (define-key wspacer-menu-bar-menu [run-linter-cpp]
-'(menu-item "Check codestyle" wsp-run-linter :help "Checks compliance with google codestyle"))
+            '(menu-item "Check codestyle" wsp-run-linter :help "Checks compliance with google codestyle"))
 
 
 
